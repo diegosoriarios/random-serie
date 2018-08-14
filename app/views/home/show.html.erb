@@ -1,0 +1,20 @@
+<h1>Likes</h1>
+
+  <% @movies.each do |movie| %>
+    <% if current_user.id == movie.user_id %>
+      <%= movie.title %><br>
+      <%= movie.ano %><br>
+      <%= movie.sinopse %><br>
+      <%= image_tag("#{movie.image}") %>
+      <%= link_to "Ver mais", movie.vermais, target: "_blank" %>
+      <%= movie.nota %><br>
+      <%= link_to 'Destroy', home_path(movie),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %><br>
+      <br><br>
+    <% end %>
+    <% else %>
+    <% end %>
+
+
+<%= link_to 'Outro', controller: 'home' %>

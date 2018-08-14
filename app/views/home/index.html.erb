@@ -1,0 +1,9 @@
+<h1><%= session[:titulo] %></h1>
+<h2><%= session[:ano] %></h2>
+<p><%= session[:sinopse] %></p>
+<%= link_to "Ver mais", session[:vermais], target: "_blank" %>
+<p><%= session[:rating] %></p>
+<%= image_tag("#{session[:poster]}") %>
+<%= link_to 'Outro', controller: 'home' %>
+<%= link_to 'Like', new_home_path %>
+<%= link_to 'Likes', home_path(current_user.id) %>
